@@ -1,0 +1,94 @@
+/* GRUP SEÇİCİ: Yazı tipi ve temel renkler */
+h1, h2, p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444; /* Koyu gri, daha okunaklı */
+}
+
+/* SAYFA ARKA PLANI */
+body {
+    background-color: #f0f2f5; /* Açık gri dış arka plan */
+    margin: 0;
+    padding: 20px;
+}
+
+/* YATAY MENÜ */
+nav ul {
+    list-style-type: none;
+    padding: 10px 20px;
+    background-color: #e8eaf6; /* Çok açık mavi menü arka planı */
+    text-align: right;
+    border-radius: 5px;
+}
+
+/* Hiyerarşik Seçici: Menü elemanları */
+nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/* Hiyerarşik Seçici: Linkler ve HOVER EFEKTİ */
+nav ul li a {
+    text-decoration: none;
+    color: #5c6bc0; /* İndigo mavi link rengi */
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #9fa8da; /* Üzerine gelince görseldeki gibi mavi tonu */
+    color: white;
+    border-radius: 4px;
+}
+
+/* İKİ SÜTUNLU DÜZEN */
+.container {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+    background-color: #ffffff; /* Ana içerik alanı beyaz */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* SOL KUTU (İçerik - Sarı Tonu) */
+.content {
+    flex: 2;
+    background-color: #fff9c4; /* Görseldeki yumuşak sarı */
+    padding: 25px;
+    border: 1px solid #fff59d;
+    border-radius: 12px;
+}
+
+/* SAĞ KUTU (Yan Menü - Mavi Tonu) */
+.sidebar {
+    flex: 1;
+    background-color: #e3f2fd; /* Görseldeki yumuşak mavi */
+    padding: 25px;
+    border: 1px solid #bbdefb;
+    border-radius: 12px;
+}
+
+/* METİN DÜZENLEMELERİ (font-size, line-height, text-align) */
+.content p, .sidebar p {
+    font-size: 16px;
+    line-height: 1.7; /* Daha rahat okuma için satır aralığı */
+    text-align: left;
+}
+
+/* Vurgulu Kelime (Bold) */
+strong {
+    color: #000;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #888;
+}
