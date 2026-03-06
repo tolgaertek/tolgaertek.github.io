@@ -1,7 +1,7 @@
-/* 1. GRUP SEÇİCİ: h1, h2, p için ortak yazı tipi ve renk */
+/* GRUP SEÇİCİ */
 h1, h2, p {
-    font-family: Arial, sans-serif;
-    color: #444;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
 }
 
 body {
@@ -10,75 +10,77 @@ body {
     padding: 20px;
 }
 
-/* 2. YATAY MENÜ DÜZENİ */
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* MENÜYÜ ORTALAMA (Navigation) */
 nav {
-    text-align: right;
-    margin-bottom: 20px;
+    text-align: center; /* Bağlantıları ortalar */
+    margin-bottom: 30px;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
+    background-color: #e8eaf6;
+    display: inline-block; /* Arka planın sadece içerik kadar olması için */
+    border-radius: 8px;
 }
 
-/* Hiyerarşik Seçici: Menü elemanları yan yana */
 nav ul li {
     display: inline-block;
-    margin-left: 10px;
+    margin: 0 10px;
 }
 
-/* Hiyerarşik Seçici: Linklerin görünümü */
 nav ul li a {
     text-decoration: none;
-    padding: 10px 20px;
-    color: #555;
-    background-color: #e0e0e0;
+    padding: 8px 15px;
+    color: #3f51b5;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Hover ve Aktif Sayfa */
+nav ul li a:hover, nav ul li a.active {
+    background-color: #3f51b5;
+    color: white;
     border-radius: 4px;
 }
 
-/* Hover ve Aktif Sayfa Efekti */
-nav ul li a.active, nav ul li a:hover {
-    background-color: #8da2d4; /* Görseldeki mavi ton */
-    color: white;
-}
-
-/* 3. İKİ SÜTUNLU DÜZEN (Display: flex) */
+/* İKİ SÜTUNLU DÜZEN */
 .container {
     display: flex;
+    max-width: 1000px; /* Sayfayı çok yaymamak için */
+    margin: 0 auto;    /* Sayfayı ortalar */
     gap: 20px;
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #ddd;
 }
 
-/* İÇERİK (Sarı Kutu) */
 .content {
     flex: 2;
-    background-color: #fff9c4; /* Görseldeki sarı ton */
-    padding: 20px;
+    background-color: #fff9c4;
+    padding: 25px;
     border: 1px solid #fbc02d;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
-/* YAN MENÜ (Mavi Kutu) */
 .sidebar {
     flex: 1;
-    background-color: #e3f2fd; /* Görseldeki mavi ton */
-    padding: 20px;
+    background-color: #e3f2fd;
+    padding: 25px;
     border: 1px solid #2196f3;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
-/* 4. METİN DÜZENLEMELERİ (font-size, line-height, text-align) */
 p {
-    font-size: 15px;
-    line-height: 1.6;
-    text-align: left;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    color: #888;
+    margin-top: 40px;
+    color: #777;
     font-size: 14px;
 }
