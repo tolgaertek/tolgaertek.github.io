@@ -1,6 +1,6 @@
 /* GRUP SEÇİCİ */
 h1, h2, p {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
 }
 
@@ -12,12 +12,12 @@ body {
 
 header {
     text-align: center;
-    padding: 10px 0;
+    margin-bottom: 10px;
 }
 
-/* MENÜYÜ ORTALAMA (Navigation) */
+/* MENÜYÜ ORTALAMA */
 nav {
-    text-align: center; /* Bağlantıları ortalar */
+    text-align: center; /* Menü çubuğunu ortalar */
     margin-bottom: 30px;
 }
 
@@ -25,7 +25,7 @@ nav ul {
     list-style-type: none;
     padding: 10px;
     background-color: #e8eaf6;
-    display: inline-block; /* Arka planın sadece içerik kadar olması için */
+    display: inline-block; /* Arka planın sadece linkler kadar olması için */
     border-radius: 8px;
 }
 
@@ -39,7 +39,6 @@ nav ul li a {
     padding: 8px 15px;
     color: #3f51b5;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 /* Hover ve Aktif Sayfa */
@@ -52,14 +51,14 @@ nav ul li a:hover, nav ul li a.active {
 /* İKİ SÜTUNLU DÜZEN */
 .container {
     display: flex;
-    max-width: 1000px; /* Sayfayı çok yaymamak için */
-    margin: 0 auto;    /* Sayfayı ortalar */
+    max-width: 1100px;
+    margin: 0 auto; /* Sayfayı ortalar */
     gap: 20px;
 }
 
 .content {
     flex: 2;
-    background-color: #fff9c4;
+    background-color: #fff9c4; /* Sarı tonu */
     padding: 25px;
     border: 1px solid #fbc02d;
     border-radius: 10px;
@@ -67,7 +66,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .sidebar {
     flex: 1;
-    background-color: #e3f2fd;
+    background-color: #e3f2fd; /* Mavi tonu */
     padding: 25px;
     border: 1px solid #2196f3;
     border-radius: 10px;
@@ -76,6 +75,7 @@ nav ul li a:hover, nav ul li a.active {
 p {
     font-size: 16px;
     line-height: 1.7;
+    text-align: left;
 }
 
 footer {
