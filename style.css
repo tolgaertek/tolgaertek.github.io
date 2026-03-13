@@ -1,15 +1,14 @@
 /* --- GENEL AYARLAR --- */
 * {
-    box-sizing: border-box; /* Box Model için kritik ayar */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8; /* Çok açık, temiz bir mavi-gri arka plan */
+    background-color: #f0f4f8; /* Modern mavi-gri arka plan */
     color: #333;
-    line-height: 1.6;
     padding: 20px;
 }
 
@@ -17,27 +16,24 @@ body {
 header {
     text-align: center;
     padding: 20px 0;
-    background-color: #ffffff; /* Header beyaz kalsın, temiz dursun */
-    border-radius: 8px 8px 0 0; /* Üst köşeleri yuvarla */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 header h1 {
-    color: #1a508b; /* Koyu, profesyonel bir mavi */
-    font-size: 2.5rem;
+    color: #1a508b;
+    font-size: 2.2rem;
 }
 
 nav {
-    text-align: center;
-    background-color: #e1e8f0; /* Menü çubuğu için açık mavi-gri */
-    padding: 10px;
-    border-radius: 0 0 8px 8px; /* Alt köşeleri yuvarla */
+    text-align: center; /* Menüyü ortalar */
     margin-bottom: 30px;
 }
 
 nav ul {
     list-style-type: none;
+    padding: 10px;
+    background-color: #e1e8f0;
     display: inline-block;
+    border-radius: 8px;
 }
 
 nav ul li {
@@ -47,20 +43,19 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #4a5568; /* Orta koyulukta gri-mavi */
+    color: #4a5568;
     font-weight: bold;
-    padding: 10px 15px;
-    transition: all 0.3s ease;
+    padding: 8px 15px;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* Hover ve Aktif Sayfa Efekti */
 nav ul li a:hover, nav ul li a.active {
-    background-color: #1a508b; /* Koyu mavi arka plan */
-    color: #ffffff; /* Beyaz yazı */
+    background-color: #1a508b;
+    color: #ffffff;
 }
 
-/* --- ANA İÇERİK ALANI (INDEX SAYFASI İÇİN) --- */
+/* --- ANA SAYFA DÜZENİ (INDEX İÇİN) --- */
 .container {
     display: flex;
     max-width: 1100px;
@@ -70,99 +65,79 @@ nav ul li a:hover, nav ul li a.active {
 
 .content {
     flex: 2;
-    background-color: #ffffff; /* İçerik kutuları beyaz */
-    padding: 30px;
-    border-radius: 8px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .sidebar {
     flex: 1;
-    background-color: #ffffff; /* Yan menü kutusu beyaz */
-    padding: 30px;
-    border-radius: 8px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-h2 {
-    color: #1a508b; /* Kutuların başlıkları koyu mavi */
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e1e8f0; /* Altına ince bir çizgi */
-    padding-bottom: 10px;
-}
-
-p {
-    margin-bottom: 15px;
-    color: #4a5568;
-}
-
-/* --- İLETİŞİM FORMU (CONTACT SAYFASI İÇİN) --- */
+/* --- İLETİŞİM FORMU (CONTACT-CONTAINER) --- */
 .contact-container {
     max-width: 600px;
-    margin: 40px auto;
-    background-color: #ffffff; /* Form kutusu beyaz */
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e1e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .contact-container h2 {
     text-align: center;
-    margin-bottom: 30px;
+    color: #1a508b;
+    margin-bottom: 25px;
 }
 
+/* Çoklu Seçici: Box Model Kullanımı */
 .contact-container label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #1a508b; /* Label'lar koyu mavi */
+    color: #1a508b;
 }
 
 .contact-container input,
 .contact-container select,
 .contact-container textarea {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 25px;
-    border: 1px solid #e1e8f0; /* Açık mavi-gri kenarlık */
-    border-radius: 5px;
-    background-color: #f8fafc; /* Hafif mavi-gri giriş alanı arka planı */
-    color: #333;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    background-color: #f8fafc;
+    font-size: 14px;
 }
 
-.contact-container input:focus,
-.contact-container select:focus,
-.contact-container textarea:focus {
-    outline: none;
-    border-color: #1a508b; /* Odaklanınca kenarlık koyu mavi olur */
-}
-
-/* GÖNDER BUTONU (MAVİ) */
+/* Gönder Butonu */
 .gonder-btn {
     width: 100%;
-    background-color: #1a508b; /* Koyu mavi buton */
-    color: #ffffff;
+    background-color: #1a508b;
+    color: white;
     padding: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
 }
 
 .gonder-btn:hover {
-    background-color: #133c69; /* Hover'da daha koyu mavi */
+    background-color: #133c69;
 }
 
 /* --- FOOTER --- */
 footer {
     text-align: center;
-    padding: 30px 0;
-    margin-top: 40px;
-    color: #718096; /* Açık gri-mavi yazı */
+    margin-top: 50px;
+    color: #718096;
     font-size: 0.9rem;
-    border-top: 1px solid #e1e8f0;
 }
