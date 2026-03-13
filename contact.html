@@ -22,11 +22,11 @@
 
     <main>
         <div class="contact-container">
-            <h2>Detaylı İletişim Formu</h2>
+            <h2>İletişim Formu</h2>
             
             <form action="#">
                 <label for="ad-soyad">Ad Soyad:</label>
-                <input type="text" id="ad-soyad" name="ad-soyad" placeholder="Örn: Emre Yıldırım" required>
+                <input type="text" id="ad-soyad" name="ad-soyad" placeholder="Adınızı ve soyadınızı giriniz" required>
 
                 <label for="email">E-posta Adresi:</label>
                 <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
@@ -34,12 +34,15 @@
                 <label for="konu">Konu:</label>
                 <select id="konu" name="konu">
                     <option value="is-teklifi">İş Teklifi</option>
-                    <option value="soru">Soru</option>
+                    <option value="soru">Soru / Yardım</option>
                     <option value="geri-bildirim">Geri Bildirim</option>
                 </select>
 
+                <label for="cv-yukle">Dosya Yükle (CV veya Fotoğraf):</label>
+                <input type="file" id="cv-yukle" name="cv-yukle">
+
                 <label for="mesaj">Mesajınız:</label>
-                <textarea id="mesaj" name="mesaj" rows="5" placeholder="Mesajınızı buraya yazın..."></textarea>
+                <textarea id="mesaj" name="mesaj" rows="5" placeholder="Mesajınızı buraya yazabilirsiniz..."></textarea>
 
                 <button type="submit" class="gonder-btn">GÖNDER</button>
             </form>
@@ -47,9 +50,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.</p>
+        <p>&copy; 2026 CSS Temel Örnek. Tolga Ertek - Tüm Hakları Saklıdır.</p>
     </footer>
 
 </body>
 </html>
-
