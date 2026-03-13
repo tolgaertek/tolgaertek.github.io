@@ -84,3 +84,60 @@ footer {
     color: #777;
     font-size: 14px;
 }
+
+/* İLETİŞİM FORMU ÖZEL STİLLERİ (Box Model Kullanımı) */
+
+.contact-container {
+    max-width: 600px;         /* Genişlik %50 veya 600px kuralı */
+    margin: 40px auto;        /* Sayfayı ortalar */
+    background-color: #fff;
+    padding: 30px;            /* Kenarlara yapışmaması için iç boşluk */
+    border: 1px solid #ddd;   /* Belirgin kenarlık */
+    border-radius: 10px;      /* Hafif köşe yuvarlaması */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Çoklu Seçici: Tüm giriş elemanlarına müdahale */
+.contact-container input, 
+.contact-container select, 
+.contact-container textarea {
+    width: 100%;              /* Alanın tamamını kapla */
+    padding: 12px;            /* Ferah durması için iç boşluk */
+    margin-bottom: 20px;      /* Alt elemanla araya boşluk */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;   /* Padding'in genişliği bozmaması için kritik */
+    font-size: 14px;
+}
+
+/* Label düzenlemesi */
+.contact-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Gönder Butonu Stili */
+.gonder-btn {
+    width: 100%;
+    background-color: #ff6347; /* Görseldeki turuncu/mercan tonu */
+    color: white;
+    padding: 15px;             /* Butonu büyütmek için padding */
+    border: none;              /* Kenarlığı kaldır */
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gonder-btn:hover {
+    background-color: #e5533d; /* Hover efekti */
+}
