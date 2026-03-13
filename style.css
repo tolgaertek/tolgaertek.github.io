@@ -1,32 +1,43 @@
-/* GRUP SEÇİCİ */
-h1, h2, p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+/* --- GENEL AYARLAR --- */
+* {
+    box-sizing: border-box; /* Box Model için kritik ayar */
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: #f0f2f5;
-    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8; /* Çok açık, temiz bir mavi-gri arka plan */
+    color: #333;
+    line-height: 1.6;
     padding: 20px;
 }
 
+/* --- HEADER & NAV (MENÜ) --- */
 header {
     text-align: center;
-    margin-bottom: 10px;
+    padding: 20px 0;
+    background-color: #ffffff; /* Header beyaz kalsın, temiz dursun */
+    border-radius: 8px 8px 0 0; /* Üst köşeleri yuvarla */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* MENÜYÜ ORTALAMA */
+header h1 {
+    color: #1a508b; /* Koyu, profesyonel bir mavi */
+    font-size: 2.5rem;
+}
+
 nav {
-    text-align: center; /* Menü çubuğunu ortalar */
+    text-align: center;
+    background-color: #e1e8f0; /* Menü çubuğu için açık mavi-gri */
+    padding: 10px;
+    border-radius: 0 0 8px 8px; /* Alt köşeleri yuvarla */
     margin-bottom: 30px;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 10px;
-    background-color: #e8eaf6;
-    display: inline-block; /* Arka planın sadece linkler kadar olması için */
-    border-radius: 8px;
+    display: inline-block;
 }
 
 nav ul li {
@@ -36,108 +47,122 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    padding: 8px 15px;
-    color: #3f51b5;
+    color: #4a5568; /* Orta koyulukta gri-mavi */
     font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
 }
 
-/* Hover ve Aktif Sayfa */
+/* Hover ve Aktif Sayfa Efekti */
 nav ul li a:hover, nav ul li a.active {
-    background-color: #3f51b5;
-    color: white;
-    border-radius: 4px;
+    background-color: #1a508b; /* Koyu mavi arka plan */
+    color: #ffffff; /* Beyaz yazı */
 }
 
-/* İKİ SÜTUNLU DÜZEN */
+/* --- ANA İÇERİK ALANI (INDEX SAYFASI İÇİN) --- */
 .container {
     display: flex;
     max-width: 1100px;
-    margin: 0 auto; /* Sayfayı ortalar */
+    margin: 0 auto;
     gap: 20px;
 }
 
 .content {
     flex: 2;
-    background-color: #fff9c4; /* Sarı tonu */
-    padding: 25px;
-    border: 1px solid #fbc02d;
-    border-radius: 10px;
+    background-color: #ffffff; /* İçerik kutuları beyaz */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .sidebar {
     flex: 1;
-    background-color: #e3f2fd; /* Mavi tonu */
-    padding: 25px;
-    border: 1px solid #2196f3;
-    border-radius: 10px;
+    background-color: #ffffff; /* Yan menü kutusu beyaz */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #1a508b; /* Kutuların başlıkları koyu mavi */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e1e8f0; /* Altına ince bir çizgi */
+    padding-bottom: 10px;
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.7;
-    text-align: left;
+    margin-bottom: 15px;
+    color: #4a5568;
 }
 
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #777;
-    font-size: 14px;
-}
-
-/* İLETİŞİM FORMU ÖZEL STİLLERİ (Box Model Kullanımı) */
-
+/* --- İLETİŞİM FORMU (CONTACT SAYFASI İÇİN) --- */
 .contact-container {
-    max-width: 600px;         /* Genişlik %50 veya 600px kuralı */
-    margin: 40px auto;        /* Sayfayı ortalar */
-    background-color: #fff;
-    padding: 30px;            /* Kenarlara yapışmaması için iç boşluk */
-    border: 1px solid #ddd;   /* Belirgin kenarlık */
-    border-radius: 10px;      /* Hafif köşe yuvarlaması */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff; /* Form kutusu beyaz */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .contact-container h2 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-/* Çoklu Seçici: Tüm giriş elemanlarına müdahale */
-.contact-container input, 
-.contact-container select, 
-.contact-container textarea {
-    width: 100%;              /* Alanın tamamını kapla */
-    padding: 12px;            /* Ferah durması için iç boşluk */
-    margin-bottom: 20px;      /* Alt elemanla araya boşluk */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;   /* Padding'in genişliği bozmaması için kritik */
-    font-size: 14px;
-}
-
-/* Label düzenlemesi */
 .contact-container label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #555;
+    color: #1a508b; /* Label'lar koyu mavi */
 }
 
-/* Gönder Butonu Stili */
+.contact-container input,
+.contact-container select,
+.contact-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #e1e8f0; /* Açık mavi-gri kenarlık */
+    border-radius: 5px;
+    background-color: #f8fafc; /* Hafif mavi-gri giriş alanı arka planı */
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-container input:focus,
+.contact-container select:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #1a508b; /* Odaklanınca kenarlık koyu mavi olur */
+}
+
+/* GÖNDER BUTONU (MAVİ) */
 .gonder-btn {
     width: 100%;
-    background-color: #ff6347; /* Görseldeki turuncu/mercan tonu */
-    color: white;
-    padding: 15px;             /* Butonu büyütmek için padding */
-    border: none;              /* Kenarlığı kaldır */
+    background-color: #1a508b; /* Koyu mavi buton */
+    color: #ffffff;
+    padding: 15px;
+    border: none;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .gonder-btn:hover {
-    background-color: #e5533d; /* Hover efekti */
+    background-color: #133c69; /* Hover'da daha koyu mavi */
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    color: #718096; /* Açık gri-mavi yazı */
+    font-size: 0.9rem;
+    border-top: 1px solid #e1e8f0;
 }
