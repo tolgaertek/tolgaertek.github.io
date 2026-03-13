@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>İletişim | Tolga Ertek</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h1>İletişim</h1>
-        <p>Benimle iletişime geçmek için aşağıdaki kanalları kullanabilirsiniz.</p>
     </header>
 
     <nav>
@@ -16,20 +16,39 @@
             <li><a href="index.html">Ana Sayfa</a></li>
             <li><a href="about.html">Hakkımda</a></li>
             <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="contact.html" class="active">İletişim</a></li>
         </ul>
     </nav>
 
     <main>
-        <p>Sorularınız veya iş birliği projeleriniz için bana ulaşın:</p>
+        <div class="contact-container">
+            <h2>Detaylı İletişim Formu</h2>
+            
+            <form action="#">
+                <label for="ad-soyad">Ad Soyad:</label>
+                <input type="text" id="ad-soyad" name="ad-soyad" placeholder="Örn: Asaf Karataş" required>
 
-        <ul>
-            <li><strong>E-posta:</strong> <a href="mailto:tolgaertek@example.com">tolgaertek@example.com</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/tolgaertek" target="_blank">github.com/tolgaertek</a></li>
-            <li><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/tolgaertek</a></li>
-        </ul>
+                <label for="email">E-posta Adresi:</label>
+                <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
 
-        <p><a href="index.html">&larr; Ana sayfaya geri dön</a></p>
+                <label for="konu">Konu:</label>
+                <select id="konu" name="konu">
+                    <option value="is-teklifi">İş Teklifi</option>
+                    <option value="soru">Soru</option>
+                    <option value="geri-bildirim">Geri Bildirim</option>
+                </select>
+
+                <label for="mesaj">Mesajınız:</label>
+                <textarea id="mesaj" name="mesaj" rows="5" placeholder="Mesajınızı buraya yazın..."></textarea>
+
+                <button type="submit" class="gonder-btn">GÖNDER</button>
+            </form>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.</p>
+    </footer>
+
 </body>
 </html>
