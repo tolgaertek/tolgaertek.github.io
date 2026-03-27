@@ -73,6 +73,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .hero-content h1 {
@@ -106,7 +107,6 @@ body {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    width: max-content;
 }
 
 /* ------------------------------------------------ */
@@ -129,6 +129,10 @@ body {
     border-radius: 8px;
     width: calc(33.333% - 15px); /* Yan yana 3 kart sığması için hesaplama */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card h3 { 
@@ -151,6 +155,11 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-small:hover {
+    background-color: #7c3aed;
 }
 
 /* ------------------------------------------------ */
@@ -192,7 +201,7 @@ body {
 }
 
 .grow-box p {
-    margin: 5px 0 10px 0;
+    margin: 5px 0;
     font-family: monospace;
     font-size: 1.1rem;
 }
