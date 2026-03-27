@@ -1,0 +1,212 @@
+/* --- GENEL SIFIRLAMA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b1120; /* Koyu lacivert/siyah arka plan */
+    color: #f8fafc;
+}
+
+/* ------------------------------------------------ */
+/* ANA KAPSAYICI (Zorunlu Kural: 100vh ve flex column) */
+.wrapper {
+    display: flex;
+    flex-direction: column; /* Dikey dizilim */
+    height: 100vh; /* Tüm ekranı kaplar */
+    overflow: hidden; /* Taşmaları engeller */
+}
+
+/* ------------------------------------------------ */
+/* 1) NAVBAR (10vh) */
+.navbar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between; /* Sağa ve sola yasla */
+    align-items: center; /* Dikeyde ortala */
+    padding: 0 4%;
+    background-color: #1e293b;
+    border-bottom: 2px solid #334155;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8; /* Hover efekti: Turkuaz */
+}
+
+/* ------------------------------------------------ */
+/* 2) HERO BÖLÜMÜ (30vh) */
+/* Zorunlu Kural: flex-direction: row, space-between ve stretch */
+.hero {
+    height: 30vh;
+    display: flex;
+    flex-direction: row; /* Yatay dizilim */
+    justify-content: space-between;
+    align-items: stretch; /* Kutuların dikeyde tam uzaması */
+    padding: 2vh 4%;
+    gap: 20px;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #f1f5f9;
+}
+
+.hero-content p {
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.hero-image {
+    flex: 1;
+    background-color: #1e293b;
+    border: 2px dashed #475569;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #64748b;
+    font-style: italic;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #38bdf8; /* Turkuaz Buton */
+    color: #0f172a;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: max-content;
+}
+
+/* ------------------------------------------------ */
+/* 3) KARTLAR BÖLÜMÜ (30vh) */
+/* Zorunlu Kural: flex-wrap: wrap ve gap kullanımı */
+.cards-section {
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap; /* Sığmazsa alt satıra geçme özelliği */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Kartlar arası boşluk */
+    padding: 2vh 4%;
+    background-color: #1e293b;
+}
+
+.card {
+    background-color: #334155;
+    padding: 15px;
+    border-radius: 8px;
+    width: calc(33.333% - 15px); /* Yan yana 3 kart sığması için hesaplama */
+    text-align: center;
+}
+
+.card h3 { 
+    color: #a78bfa; /* Mor başlıklar */
+    margin-bottom: 5px; 
+    font-size: 1.1rem; 
+}
+
+.card p { 
+    font-size: 0.85rem; 
+    color: #cbd5e1; 
+    margin-bottom: 10px; 
+}
+
+.btn-small {
+    padding: 6px 15px;
+    background-color: #8b5cf6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* ------------------------------------------------ */
+/* 4) FLEX GROW UYGULAMA (20vh) */
+/* Zorunlu Kural: align-items: stretch ve flex-grow 1-2-1 kuralı */
+.flex-grow-section {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* Kutular yüksekliği dolduracak şekilde esner */
+    gap: 15px;
+    padding: 2vh 4%;
+}
+
+.grow-box {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+/* Hocanın tam istediği büyüme oranları */
+.box-1 {
+    flex-grow: 1;
+    background-color: #0ea5e9; /* Mavi */
+}
+
+.box-2 {
+    flex-grow: 2; /* Diğerlerinin iki katı büyüyecek */
+    background-color: #10b981; /* Yeşil */
+}
+
+.box-3 {
+    flex-grow: 1;
+    background-color: #f59e0b; /* Turuncu */
+}
+
+.grow-box p {
+    margin: 5px 0 10px 0;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+/* ------------------------------------------------ */
+/* 5) FOOTER (10vh) */
+/* Zorunlu Kural: justify-content: center ve align-items: center */
+.footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center; /* Yatayda ortala */
+    align-items: center;     /* Dikeyde ortala */
+    background-color: #0b1120;
+    color: #64748b;
+    border-top: 1px solid #1e293b;
+    font-size: 0.9rem;
+}
