@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halısaha Duyurusu | Tolga Ertek</title>
+    <link rel="stylesheet" href="position-style.css">
+</head>
+<body>
+
+    <a href="#" class="fixed-whatsapp">💬 Whatsapp Grubuna Katıl</a>
+
+    <header class="header-section">
+        <h1>Geleneksel Halısaha Derbisi</h1>
+        <a href="index.html" class="back-link">🔙 Ana Sayfaya Dön</a>
+    </header>
+
+    <main class="main-content">
+        <div class="announcement-card">
+            
+            <div class="badge absolute-date">🗓️ 12 Mayıs Cuma - 21:00</div>
+            
+            <div class="badge absolute-location">📍 Kampüs Spor Tesisleri</div>
+            
+            <div class="absolute-ribbon">SON 2 KONTENJAN!</div>
+
+            <h2 class="card-title">Bilgisayar Mühendisliği Sahaya İniyor!</h2>
+            <p class="card-desc">
+                Dönem sonu stresini atmak, vizelerin acısını çıkarmak için yeşil sahada buluşuyoruz. 
+                7x7 yapılacak maçımızda sen de takımını seç, kramponlarını kap gel!
+            </p>
+            
+            <button class="join-btn">Kadroya Yazıl ⚽</button>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <p>&copy; 2026 CSS Position Lab - Tolga Ertek (170423010)</p>
+    </footer>
+
+</body>
+</html>
