@@ -1,0 +1,185 @@
+/* --- GENEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f1a14; /* Çok koyu çim yeşili / siyah */
+    color: #e0f2e9;
+    /* Sayfada scroll çıkması için ekstra boşluk (fixed test etmek için) */
+    padding-bottom: 500px; 
+}
+
+/* --- KISA BAŞLIK ALANI --- */
+.header-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1b4332;
+    border-bottom: 4px solid #52b788;
+}
+
+.header-section h1 {
+    color: #74c69d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.back-link {
+    color: #b7e4c7;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 1px solid #b7e4c7;
+    border-radius: 5px;
+    transition: 0.3s ease; /* ZORUNLU KURAL: 1. CSS Etkileşimi (Transition) */
+    cursor: pointer; /* ZORUNLU KURAL: Hover cursor değişimi */
+}
+
+.back-link:hover {
+    background-color: #b7e4c7;
+    color: #1b4332;
+}
+
+/* --- ANA İÇERİK ALANI --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/* --- ZORUNLU KURAL: KAPSAYICI KART (POSITION: RELATIVE) --- */
+.announcement-card {
+    position: relative; /* İçindeki absolute öğeler buna göre hizalanır */
+    width: 600px;
+    background-color: #2d6a4f;
+    padding: 60px 40px 40px 40px;
+    border-radius: 12px;
+    border: 2px solid #74c69d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* --- ZORUNLU KURAL: KART İÇİNDEKİ ABSOLUTE ÖĞELER --- */
+.badge {
+    position: absolute;
+    background-color: #081c15;
+    color: #95d5b2;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid #52b788;
+    cursor: help; /* ZORUNLU KURAL: Hover cursor değişimi */
+}
+
+/* ABSOLUTE 1: Sağ Üst (Tarih) */
+.absolute-date {
+    top: -20px;
+    right: -20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ABSOLUTE 2: Sol Alt (Konum) */
+.absolute-location {
+    bottom: -20px;
+    left: -20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer; /* ZORUNLU KURAL: Hover cursor değişimi */
+    transition: transform 0.3s;
+}
+
+.absolute-location:hover {
+    transform: scale(1.1);
+}
+
+/* ABSOLUTE 3: Sol Üst Kurdele (Üst üste binme ve Z-Index) */
+.absolute-ribbon {
+    position: absolute;
+    top: 20px;
+    left: -15px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 25px;
+    font-weight: 900;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+    z-index: 10; /* ZORUNLU KURAL: Z-Index kullanımı (Kartın üzerine biner) */
+    transform: rotate(-5deg);
+    animation: pulse 2s infinite; /* ZORUNLU KURAL: 2. CSS Etkileşimi (Keyframes Animasyon) */
+}
+
+/* --- KART İÇİ METİNLER VE BUTON --- */
+.card-title {
+    color: #d8f3dc;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.card-desc {
+    color: #b7e4c7;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.join-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #52b788;
+    color: #081c15;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    cursor: pointer; /* ZORUNLU KURAL: Hover cursor değişimi */
+    transition: background-color 0.3s;
+}
+
+.join-btn:hover {
+    background-color: #74c69d;
+}
+
+.join-btn:active {
+    transform: scale(0.98); /* ZORUNLU KURAL: :active efekti */
+}
+
+/* --- ZORUNLU KURAL: SCROLL SIRASINDA SABİT KALAN (POSITION: FIXED) --- */
+.fixed-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366; /* Whatsapp Yeşili */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    z-index: 100; /* Her şeyin üstünde durması için yüksek z-index */
+    cursor: pointer; /* ZORUNLU KURAL: Hover cursor değişimi */
+    transition: transform 0.3s;
+}
+
+.fixed-whatsapp:hover {
+    transform: translateY(-5px);
+}
+
+/* --- KEYFRAMES ANİMASYONU --- */
+@keyframes pulse {
+    0% { transform: rotate(-5deg) scale(1); }
+    50% { transform: rotate(-5deg) scale(1.05); }
+    100% { transform: rotate(-5deg) scale(1); }
+}
+
+/* --- ALT BİLGİ ALANI --- */
+.footer-section {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    color: #52b788;
+    font-size: 0.9rem;
+    border-top: 1px solid #1b4332;
+}
