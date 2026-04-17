@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 6-1: Öğrenci Not Hesaplama</title>
+    <style>
+        /* Modern ve Renkli Tasarım (CSS) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .hesap-karti {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .hesap-karti h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .form-grup {
+            margin-bottom: 15px;
+        }
+
+        /* İstenildiği gibi input type="text" kullanıldı */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Sonuç Gösterim Alanı */
+        #sonucAlani {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 6px;
+            display: none; /* Hesaplamadan önce gizli */
+        }
+
+        #sonucAd {
+            margin: 0 0 10px 0;
+            color: #212529;
+            font-size: 18px;
+        }
+
+        .sonuc-satir {
+            margin: 5px 0;
+            font-size: 15px;
+            color: #495057;
+        }
+
+        .gecti { color: #28a745; font-weight: bold; }
+        .kaldi { color: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="hesap-karti">
+        <h2>Öğrenci Not Hesaplama</h2>
+        
+        <div class="form-grup">
+            <input type="text" id="adSoyad" placeholder="Öğrencinin Adı Soyadı">
+        </div>
+        <div class="form-grup">
+            <input type="text" id="vizeNotu" placeholder="Vize Notu (Örn: 60)">
+        </div>
+        <div class="form-grup">
+            <input type="text" id="finalNotu" placeholder="Final Notu (Örn: 60)">
+        </div>
+
+        <button onclick="notHesapla()">Hesapla</button>
+
+        <div id="sonucAlani">
+            <h3 id="sonucAd"></h3>
+            <p class="sonuc-satir">Ortalama: <span id="sonucOrtalama"></span></p>
+            <p class="sonuc-satir">Harf Notu: <span id="sonucHarf"></span></p>
+            <p class="sonuc-satir">Durum: <span id="sonucDurum"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function notHesapla() {
+            // Kullanıcıdan verileri alma
+            let adSoyad = document.getElementById("adSoyad").value;
+            let vize = document.getElementById("vizeNotu").value;
+            let final = document.getElementById("finalNotu").value;
+
+           
+            let vizeSayi = parseFloat(vize);
+            let finalSayi = parseFloat(final);
+
+            // Basit Hata Kontrolü
+            if (adSoyad.trim() === "" || isNaN(vizeSayi) || isNaN(finalSayi)) {
+                alert("Lütfen tüm alanları geçerli değerlerle doldurunuz.");
+                return;
+            }
+
+            if (vizeSayi < 0 || vizeSayi > 100 || finalSayi < 0 || finalSayi > 100) {
+                alert("Notlar 0 ile 100 arasında olmalıdır.");
+                return;
+            }
+
+            // Ortalama Hesaplama (Vize %40, Final %60)
+            let ortalama = (vizeSayi * 0.4) + (finalSayi * 0.6);
+
+            
+            let harfNotu = "";
+            if (ortalama >= 90) harfNotu = "AA";
+            else if (ortalama >= 80) harfNotu = "BA";
+            else if (ortalama >= 70) harfNotu = "BB";
+            else if (ortalama >= 60) harfNotu = "CB";
+            else if (ortalama >= 50) harfNotu = "CC";
+            else if (ortalama >= 40) harfNotu = "DC";
+            else if (ortalama >= 30) harfNotu = "DD";
+            else if (ortalama >= 20) harfNotu = "FD";
+            else harfNotu = "FF";
+
+            // Durum Belirleme (50 ve üstü geçti)
+            let durumSpan = document.getElementById("sonucDurum");
+            if (ortalama >= 50) {
+                durumSpan.innerHTML = "Geçti";
+                durumSpan.className = "gecti";
+            } else {
+                durumSpan.innerHTML = "Kaldı";
+                durumSpan.className = "kaldi";
+            }
+
+            // Sonuçları HTML içine yerleştirme
+            document.getElementById("sonucAd").innerHTML = adSoyad;
+            document.getElementById("sonucOrtalama").innerHTML = ortalama.toFixed(2);
+            document.getElementById("sonucHarf").innerHTML = harfNotu;
+
+            // Sonuç alanını görünür yapma
+            document.getElementById("sonucAlani").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
