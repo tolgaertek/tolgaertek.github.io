@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafta 6-1: Öğrenci Not Hesaplama</title>
     <style>
-        /* Modern ve Renkli Tasarım (CSS) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f2f5;
@@ -36,7 +35,6 @@
             margin-bottom: 15px;
         }
 
-        /* İstenildiği gibi input type="text" kullanıldı */
         input[type="text"] {
             width: 100%;
             padding: 12px;
@@ -52,7 +50,7 @@
             outline: none;
         }
 
-        button {
+        button.hesapla-btn {
             width: 100%;
             padding: 12px;
             background-color: #007bff;
@@ -65,17 +63,36 @@
             margin-top: 10px;
         }
 
-        button:hover {
+        button.hesapla-btn:hover {
             background-color: #0056b3;
         }
 
-        /* Sonuç Gösterim Alanı */
+        /* Ana Sayfaya Dön Butonu Stilleri */
+        .geri-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #6c757d;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-top: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
+        }
+
+        .geri-btn:hover {
+            background-color: #5a6268;
+        }
+
         #sonucAlani {
             margin-top: 25px;
             padding: 15px;
             background-color: #e9ecef;
             border-radius: 6px;
-            display: none; /* Hesaplamadan önce gizli */
+            display: none;
         }
 
         #sonucAd {
@@ -109,7 +126,7 @@
             <input type="text" id="finalNotu" placeholder="Final Notu (Örn: 60)">
         </div>
 
-        <button onclick="notHesapla()">Hesapla</button>
+        <button class="hesapla-btn" onclick="notHesapla()">Hesapla</button>
 
         <div id="sonucAlani">
             <h3 id="sonucAd"></h3>
@@ -117,20 +134,20 @@
             <p class="sonuc-satir">Harf Notu: <span id="sonucHarf"></span></p>
             <p class="sonuc-satir">Durum: <span id="sonucDurum"></span></p>
         </div>
+
+        <a href="index.html" class="geri-btn">Ana Sayfaya Dön</a>
+
     </div>
 
     <script>
         function notHesapla() {
-            // Kullanıcıdan verileri alma
             let adSoyad = document.getElementById("adSoyad").value;
             let vize = document.getElementById("vizeNotu").value;
             let final = document.getElementById("finalNotu").value;
 
-           
             let vizeSayi = parseFloat(vize);
             let finalSayi = parseFloat(final);
 
-            // Basit Hata Kontrolü
             if (adSoyad.trim() === "" || isNaN(vizeSayi) || isNaN(finalSayi)) {
                 alert("Lütfen tüm alanları geçerli değerlerle doldurunuz.");
                 return;
@@ -141,10 +158,8 @@
                 return;
             }
 
-            // Ortalama Hesaplama (Vize %40, Final %60)
             let ortalama = (vizeSayi * 0.4) + (finalSayi * 0.6);
 
-            
             let harfNotu = "";
             if (ortalama >= 90) harfNotu = "AA";
             else if (ortalama >= 80) harfNotu = "BA";
@@ -156,7 +171,6 @@
             else if (ortalama >= 20) harfNotu = "FD";
             else harfNotu = "FF";
 
-            // Durum Belirleme (50 ve üstü geçti)
             let durumSpan = document.getElementById("sonucDurum");
             if (ortalama >= 50) {
                 durumSpan.innerHTML = "Geçti";
@@ -166,12 +180,10 @@
                 durumSpan.className = "kaldi";
             }
 
-            // Sonuçları HTML içine yerleştirme
             document.getElementById("sonucAd").innerHTML = adSoyad;
             document.getElementById("sonucOrtalama").innerHTML = ortalama.toFixed(2);
             document.getElementById("sonucHarf").innerHTML = harfNotu;
 
-            // Sonuç alanını görünür yapma
             document.getElementById("sonucAlani").style.display = "block";
         }
     </script>
