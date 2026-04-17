@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 6-2: Birim Dönüştürücü</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .donusturucu-karti {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            box-sizing: border-box;
+        }
+
+        .donusturucu-karti h2 {
+            text-align: center;
+            color: #2d3748;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .form-grup {
+            margin-bottom: 15px;
+        }
+
+        .form-grup label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus, select:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        .satir {
+            display: flex;
+            gap: 15px;
+        }
+
+        .satir .form-grup {
+            flex: 1;
+        }
+
+        .hesapla-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            margin-top: 10px;
+        }
+
+        .hesapla-btn:hover {
+            background-color: #5a67d8;
+        }
+
+        .hesapla-btn:active {
+            transform: scale(0.98);
+        }
+
+        .sonuc-kutusu {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #ebf8ff;
+            border-left: 5px solid #3182ce;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2b6cb0;
+            text-align: center;
+            display: none; /* İlk başta gizli */
+        }
+
+        .geri-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #cbd5e0;
+            color: #4a5568;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
+        }
+
+        .geri-btn:hover {
+            background-color: #a0aec0;
+            color: #1a202c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="donusturucu-karti">
+        <h2>Mühendislik Birim Dönüştürücü</h2>
+
+        <div class="form-grup">
+            <label for="deger">Dönüştürülecek Değer:</label>
+            <input type="number" id="deger" placeholder="Örn: 50" value="1">
+        </div>
+
+        <div class="form-grup">
+            <label for="kategori">Kategori:</label>
+            <select id="kategori" onchange="birimleriGuncelle()">
+                <option value="uzunluk">Uzunluk (Metre, KM, Mil)</option>
+                <option value="sicaklik">Sıcaklık (Celsius, Fahrenheit, Kelvin)</option>
+            </select>
+        </div>
+
+        <div class="satir">
+            <div class="form-grup">
+                <label for="kaynakBirim">Kaynak Birim:</label>
+                <select id="kaynakBirim"></select>
+            </div>
+            <div class="form-grup">
+                <label for="hedefBirim">Hedef Birim:</label>
+                <select id="hedefBirim"></select>
+            </div>
+        </div>
+
+        <button class="hesapla-btn" onclick="donustur()">Hesapla</button>
+
+        <div id="sonucAlani" class="sonuc-kutusu">
+            Sonuç: <span id="sonucMetni"></span>
+        </div>
+
+        <a href="index.html" class="geri-btn">Ana Sayfaya Dön</a>
+    </div>
+
+    <script>
+        // Kategorilere göre alt birimlerin tanımlanması
+        const birimSecenekleri = {
+            uzunluk: [
+                { deger: "m", metin: "Metre" },
+                { deger: "km", metin: "Kilometre" },
+                { deger: "mil", metin: "Mil" }
+            ],
+            sicaklik: [
+                { deger: "c", metin: "Celsius (°C)" },
+                { deger: "f", metin: "Fahrenheit (°F)" },
+                { deger: "k", metin: "Kelvin (K)" }
+            ]
+        };
+
+        // Kategori seçimine göre Kaynak ve Hedef select kutularını dolduran fonksiyon
+        function birimleriGuncelle() {
+            const kategori = document.getElementById("kategori").value;
+            const kaynakSelect = document.getElementById("kaynakBirim");
+            const hedefSelect = document.getElementById("hedefBirim");
+
+            // Önceki seçenekleri temizle
+            kaynakSelect.innerHTML = "";
+            hedefSelect.innerHTML = "";
+
+            // Yeni seçenekleri ekle
+            birimSecenekleri[kategori].forEach(birim => {
+                kaynakSelect.add(new Option(birim.metin, birim.deger));
+                hedefSelect.add(new Option(birim.metin, birim.deger));
+            });
+
+            // Varsayılan olarak hedef birimi 2. seçenek yap (Örn: Metre -> Kilometre)
+            if (hedefSelect.options.length > 1) {
+                hedefSelect.selectedIndex = 1;
+            }
+        }
+
+        // Sayfa yüklendiğinde birimleri ilk kez doldur
+        window.onload = birimleriGuncelle;
+
+        // Asıl dönüştürme işlemini yapan fonksiyon
+        function donustur() {
+            const deger = parseFloat(document.getElementById("deger").value);
+            const kategori = document.getElementById("kategori").value;
+            const kaynak = document.getElementById("kaynakBirim").value;
+            const hedef = document.getElementById("hedefBirim").value;
+
+            if (isNaN(deger)) {
+                alert("Lütfen geçerli bir sayı giriniz.");
+                return;
+            }
+
+            let sonuc = 0;
+
+            // Aynı birim seçildiyse işlem yapmaya gerek yok
+            if (kaynak === hedef) {
+                sonuc = deger;
+            } 
+            else if (kategori === "uzunluk") {
+                // Uzunluk algoritması: Önce her şeyi Metre'ye çevir
+                let metreCinsinden = deger;
+                if (kaynak === "km") metreCinsinden = deger * 1000;
+                else if (kaynak === "mil") metreCinsinden = deger * 1609.344;
+
+                // Metreden hedef birime çevir
+                if (hedef === "m") sonuc = metreCinsinden;
+                else if (hedef === "km") sonuc = metreCinsinden / 1000;
+                else if (hedef === "mil") sonuc = metreCinsinden / 1609.344;
+            } 
+            else if (kategori === "sicaklik") {
+                // Sıcaklık algoritması: Önce her şeyi Celsius'a çevir
+                let celsiusCinsinden = deger;
+                if (kaynak === "f") celsiusCinsinden = (deger - 32) * 5/9;
+                else if (kaynak === "k") celsiusCinsinden = deger - 273.15;
+
+                // Celsius'tan hedef birime çevir
+                if (hedef === "c") sonuc = celsiusCinsinden;
+                else if (hedef === "f") sonuc = (celsiusCinsinden * 9/5) + 32;
+                else if (hedef === "k") sonuc = celsiusCinsinden + 273.15;
+            }
+
+            // Sonucu formatla (virgülden sonra en fazla 4 hane) ve ekrana yazdır
+            document.getElementById("sonucMetni").innerText = sonuc.toFixed(4).replace(/\.0000$/, '');
+            document.getElementById("sonucAlani").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
