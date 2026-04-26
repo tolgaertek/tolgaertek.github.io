@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     
+    // --- İÇERİĞİ İNCELE BUTONU KAYDIRMA ETKİSİ ---
+    const inceleBtn = document.getElementById("inceleBtn");
+    if (inceleBtn) {
+        inceleBtn.addEventListener("click", function() {
+            // Tıklanınca detaylar bölümüne pürüzsüz kaydır
+            document.getElementById("detaylar").scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
     // --- TEMA DEĞİŞTİRME ---
     const themeToggleBtn = document.getElementById("themeToggleBtn");
     
