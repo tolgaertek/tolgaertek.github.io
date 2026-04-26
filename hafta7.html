@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veri Madenciliği Atölyesi</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/hafta7.css">
+</head>
+<body>
 
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Veri Atölyesi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfaya Dön</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="themeToggleBtn" class="btn btn-outline-secondary btn-sm">Karanlık Tema</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container py-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold">Veri Madenciliği ve Makine Öğrenmesi Atölyesi</h1>
+                <p class="lead mt-3 text-muted">Sektör standartlarında algoritmalar, veri ön işleme teknikleri ve model değerlendirme metrikleri üzerine yoğunlaşacağımız uygulamalı laboratuvar çalışmasına davetlisiniz.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+                    <a href="#kayit-formu" class="btn btn-primary btn-lg px-4">Hemen Başvur</a>
+                    <a href="#detaylar" class="btn btn-outline-secondary btn-lg px-4">İçeriği İncele</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="detaylar" class="container py-5">
+        <h2 class="text-center mb-4 fw-bold">Atölye İçeriği</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">Veri Ön İşleme</h5>
+                        <p class="card-text">Eksik veri doldurma, aykırı değer tespiti ve normalizasyon süreçlerini uygulamalı olarak öğreneceğiz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">Sınıflandırma Modelleri</h5>
+                        <p class="card-text">Random Forest, SVM ve Karar Ağaçları ile tıp ve finans veri setleri üzerinde modellemeler yapacağız.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">Model Değerlendirme</h5>
+                        <p class="card-text">Karmaşıklık matrisi, F1 Skoru ve ROC eğrisi ile oluşturulan modellerin başarımını ölçeceğiz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kayit-formu" class="container py-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h3 class="mb-0 fs-5">Etkinlik Başvuru Formu</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="applicationForm">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="fullName" class="form-label fw-semibold">Ad Soyad</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Tam adınızı giriniz">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="emailAddress" class="form-label fw-semibold">E-posta</label>
+                                    <input type="email" class="form-control" id="emailAddress" placeholder="ornek@posta.com">
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="department" class="form-label fw-semibold">Bölüm</label>
+                                    <input type="text" class="form-control" id="department" placeholder="Örn: Bilgisayar Mühendisliği">
+                                </div>
