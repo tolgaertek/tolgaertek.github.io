@@ -35,7 +35,7 @@
                 <p class="lead mt-3 text-secondary">Sektör standartlarında algoritmalar ve veri ön işleme teknikleri üzerine yoğunlaşacağımız uygulamalı laboratuvar çalışmasına davetlisiniz.</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
                     <a href="#kayit-formu" class="btn btn-primary btn-lg px-4">Hemen Başvur</a>
-                    <a href="#detaylar" class="btn btn-outline-primary btn-lg px-4 bg-white">İçeriği İncele</a>
+                    <button class="btn btn-outline-primary btn-lg px-4" id="inceleBtn" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false">İçeriği İncele</button>
                 </div>
             </div>
         </div>
@@ -44,33 +44,60 @@
     <section id="detaylar" class="container py-4">
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
+                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" class="card-img-top custom-card-img" alt="Veri Ön İşleme">
                     <div class="card-body">
                         <h5 class="card-title text-primary fw-bold">Veri Ön İşleme</h5>
-                        <p class="card-text text-muted">Eksik veri doldurma, aykırı değer tespiti ve normalizasyon süreçleri.</p>
+                        <p class="card-text text-muted mb-0">Eksik veri doldurma, aykırı değer tespiti ve normalizasyon süreçleri.</p>
+                        
+                        <div class="collapse multi-collapse mt-3 pt-3 border-top">
+                            <ul class="list-unstyled mb-0 small text-secondary">
+                                <li class="mb-1">- Z-Score ve Min-Max Normalizasyonu</li>
+                                <li class="mb-1">- K-NN Imputer Uygulamaları</li>
+                                <li>- SMOTE ile Dengesiz Veri Çözümleri</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
+                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=500&q=80" class="card-img-top custom-card-img" alt="Makine Öğrenmesi">
                     <div class="card-body">
                         <h5 class="card-title text-primary fw-bold">Sınıflandırma Modelleri</h5>
-                        <p class="card-text text-muted">Random Forest, SVM ve Karar Ağaçları ile uygulamalı modelleme.</p>
+                        <p class="card-text text-muted mb-0">Random Forest, SVM ve Karar Ağaçları ile uygulamalı modelleme.</p>
+                        
+                        <div class="collapse multi-collapse mt-3 pt-3 border-top">
+                            <ul class="list-unstyled mb-0 small text-secondary">
+                                <li class="mb-1">- Scikit-Learn ile Model Kurulumu</li>
+                                <li class="mb-1">- Hiperparametre Optimizasyonu</li>
+                                <li>- Çapraz Doğrulama (Cross Validation)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
+                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" class="card-img-top custom-card-img" alt="Değerlendirme">
                     <div class="card-body">
                         <h5 class="card-title text-primary fw-bold">Model Değerlendirme</h5>
-                        <p class="card-text text-muted">Karmaşıklık matrisi, F1 Skoru ve ROC eğrisi ile başarım ölçümü.</p>
+                        <p class="card-text text-muted mb-0">Karmaşıklık matrisi, F1 Skoru ve ROC eğrisi ile başarım ölçümü.</p>
+                        
+                        <div class="collapse multi-collapse mt-3 pt-3 border-top">
+                            <ul class="list-unstyled mb-0 small text-secondary">
+                                <li class="mb-1">- Confusion Matrix Yorumlama</li>
+                                <li class="mb-1">- Precision, Recall ve F1 Skorları</li>
+                                <li>- ROC/AUC Eğrilerinin Çizimi</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="kayit-formu" class="container py-5 mb-5">
+    <section id="kayit-formu" class="container py-5 mb-5 mt-4">
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="card shadow-lg border-0">
@@ -149,7 +176,7 @@
 
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-primary px-4">Başvuru Özeti Oluştur</button>
-                                <button type="button" class="btn btn-outline-secondary px-4" id="clearFormBtn">Formu Temizle</button>
+                                <button type="button" class="btn bg-white text-primary border-primary px-4" id="clearFormBtn">Formu Temizle</button>
                             </div>
                         </form>
                     </div>
