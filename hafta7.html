@@ -115,14 +115,15 @@
 
     <section id="detaylar" class="container py-4">
         <div class="row g-4">
+            
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden">
+                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden" data-bs-toggle="collapse" data-bs-target="#collapseCard1" style="cursor: pointer;" aria-expanded="false" aria-controls="collapseCard1">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" class="card-img-top custom-card-img" alt="Veri Ön İşleme">
                     <div class="card-body">
                         <h5 class="card-title text-primary fw-bold">Veri Ön İşleme</h5>
                         <p class="card-text text-muted mb-0">Eksik veri doldurma, aykırı değer tespiti ve normalizasyon süreçleri.</p>
                         
-                        <div class="collapse multi-collapse mt-3 pt-3 border-top border-secondary-subtle">
+                        <div class="collapse multi-collapse mt-3 pt-3 border-top border-secondary-subtle" id="collapseCard1">
                             <ul class="list-unstyled mb-0 small text-muted">
                                 <li class="mb-1">- Z-Score ve Min-Max Normalizasyonu</li>
                                 <li class="mb-1">- K-NN Imputer Uygulamaları</li>
@@ -132,14 +133,15 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden">
+                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden" data-bs-toggle="collapse" data-bs-target="#collapseCard2" style="cursor: pointer;" aria-expanded="false" aria-controls="collapseCard2">
                     <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=500&q=80" class="card-img-top custom-card-img" alt="Makine Öğrenmesi">
                     <div class="card-body">
                         <h5 class="card-title text-primary fw-bold">Sınıflandırma Modelleri</h5>
                         <p class="card-text text-muted mb-0">Random Forest, SVM ve Karar Ağaçları ile uygulamalı modelleme.</p>
                         
-                        <div class="collapse multi-collapse mt-3 pt-3 border-top border-secondary-subtle">
+                        <div class="collapse multi-collapse mt-3 pt-3 border-top border-secondary-subtle" id="collapseCard2">
                             <ul class="list-unstyled mb-0 small text-muted">
                                 <li class="mb-1">- Scikit-Learn ile Model Kurulumu</li>
                                 <li class="mb-1">- Hiperparametre Optimizasyonu</li>
@@ -149,14 +151,15 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden">
+                <div class="card h-100 shadow-sm border-0 border-top border-primary border-4 overflow-hidden" data-bs-toggle="collapse" data-bs-target="#collapseCard3" style="cursor: pointer;" aria-expanded="false" aria-controls="collapseCard3">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" class="card-img-top custom-card-img" alt="Değerlendirme">
                     <div class="card-body">
                         <h5 class="card-title text-primary fw-bold">Model Değerlendirme</h5>
                         <p class="card-text text-muted mb-0">Karmaşıklık matrisi, F1 Skoru ve ROC eğrisi ile başarım ölçümü.</p>
                         
-                        <div class="collapse multi-collapse mt-3 pt-3 border-top border-secondary-subtle">
+                        <div class="collapse multi-collapse mt-3 pt-3 border-top border-secondary-subtle" id="collapseCard3">
                             <ul class="list-unstyled mb-0 small text-muted">
                                 <li class="mb-1">- Confusion Matrix Yorumlama</li>
                                 <li class="mb-1">- Precision, Recall ve F1 Skorları</li>
@@ -166,6 +169,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
