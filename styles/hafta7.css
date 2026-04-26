@@ -1,19 +1,35 @@
 
-body {
-    transition: background-color 0.3s ease, color 0.3s ease;
+.bg-light-blue {
+    background-color: #f4f7f6; 
 }
 
 
-.card {
+[data-bs-theme="dark"] body.bg-light-blue {
+    background-color: #212529 !important;
+}
+
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+#detaylar .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #detaylar .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.15) !important;
+    box-shadow: 0 0.5rem 2rem rgba(13, 110, 253, 0.15) !important;
+}
+
+
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 
 [data-bs-theme="dark"] .card {
+    background-color: #2b3035 !important;
     border: 1px solid #495057 !important;
 }
