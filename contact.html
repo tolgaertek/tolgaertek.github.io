@@ -3,55 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>İletişim | Tolga Ertek</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>İletişim</h1>
-    </header>
+    <h1>İletişim</h1>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html" class="active">İletişim</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="about.html">Hakkımda</a></li>
+        <li><a href="interests.html">İlgi Alanlarım</a></li>
+        <li><a href="contact.html">İletişim</a></li>
+    </ul>
 
-    <main>
-        <div class="contact-container">
-            <h2>İletişim Formu</h2>
-            
-            <form action="#">
-                <label for="ad-soyad">Ad Soyad:</label>
-                <input type="text" id="ad-soyad" name="ad-soyad" placeholder="Adınızı ve soyadınızı giriniz" required>
+    <h2>İletişim Formu</h2>
 
-                <label for="email">E-posta Adresi:</label>
-                <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+    <form action="#" method="post">
+        
+        <label for="adSoyad">Ad Soyad:</label><br>
+        <input type="text" id="adSoyad" name="adSoyad" placeholder="Adınızı ve soyadınızı giriniz"><br><br>
 
-                <label for="konu">Konu:</label>
-                <select id="konu" name="konu">
-                    <option value="is-teklifi">İş Teklifi</option>
-                    <option value="soru">Soru / Yardım</option>
-                    <option value="geri-bildirim">Geri Bildirim</option>
-                </select>
+        <label for="email">E-posta Adresi:</label><br>
+        <input type="email" id="email" name="email" placeholder="ornek@mail.com"><br><br>
 
-                <label for="cv-yukle">Dosya Yükle (CV veya Fotoğraf):</label>
-                <input type="file" id="cv-yukle" name="cv-yukle">
+        <label for="konu">Konu:</label><br>
+        <select id="konu" name="konu">
+            <option value="is_teklifi">İş Teklifi</option>
+            <option value="soru">Soru / Öneri</option>
+            <option value="diger">Diğer</option>
+        </select><br><br>
 
-                <label for="mesaj">Mesajınız:</label>
-                <textarea id="mesaj" name="mesaj" rows="5" placeholder="Mesajınızı buraya yazabilirsiniz..."></textarea>
+        <label for="dosya">Dosya Yükle (CV veya Fotoğraf):</label><br>
+        <input type="file" id="dosya" name="dosya"><br><br>
 
-                <button type="submit" class="gonder-btn">GÖNDER</button>
-            </form>
-        </div>
-    </main>
+        <label for="mesaj">Mesajınız:</label><br>
+        <textarea id="mesaj" name="mesaj" rows="5" cols="40" placeholder="Mesajınızı buraya yazabilirsiniz..."></textarea><br><br>
 
-    <footer>
-        <p>&copy; 2026 CSS Temel Örnek. Tolga Ertek - Tüm Hakları Saklıdır.</p>
-    </footer>
+        <input type="submit" value="GÖNDER">
+        
+    </form>
+
+    <br><br>
+    <p>&copy; 2026 CSS Temel Örnek. Tolga Ertek - Tüm Hakları Saklıdır.</p>
 
 </body>
 </html>
